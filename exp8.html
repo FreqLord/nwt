@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Experiment 8</title>
+    <style>
+        body { font-family: Arial; text-align: center; background: #f0f2f5; color: #333; padding: 50px; transition: 0.3s; }
+        .card { background: white; padding: 30px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        input, button { padding: 10px; margin: 5px; font-size: 14px; }
+        button { background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        
+        /* Dark Theme Styles */
+        .dark { background: #121212; color: #fff; }
+        .dark .card { background: #1e1e1e; color: #fff; }
+        .dark input { background: #2d2d2d; color: #fff; border: 1px solid #444; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Interactive Web Page</h2>
+        <input type="text" id="name" placeholder="Enter your name"><br>
+        <button onclick="displayMessage()">Greet Me</button>
+        <button onclick="toggleTheme()">Toggle Theme</button>
+        <p id="msg"></p>
+    </div>
+
+    <script>
+        function displayMessage() {
+            let name = document.getElementById("name").value;
+            document.getElementById("msg").innerHTML = name ? "Hello, " + name + "!" : "Please enter a name!";
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle("dark");
+        }
+    </script>
+</body>
+</html>
